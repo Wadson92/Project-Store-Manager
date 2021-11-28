@@ -5,7 +5,7 @@ module.exports = async (req, res) => {
   try {
     const findProducts = await listProduct({ id });
 
-    return res.status(200).json({ products: findProducts });
+    return res.status(200).json(findProducts);
   } catch (error) {
     // console.log(error);
     res.status(422).json(error);
