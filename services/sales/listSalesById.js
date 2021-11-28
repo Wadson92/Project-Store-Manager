@@ -8,5 +8,8 @@ module.exports = async ({ id }) => {
     throw salesAlready;
   }
   const foundSalesId = await Sales.findSalesById(id);
+  if (!foundSalesId) {
+    throw salesAlready;
+  }
   return foundSalesId;
 };

@@ -27,6 +27,13 @@ const productAlready = {
   },
 };
 
+const saleNotExist = {
+  err: {
+    code: CODE_ERROR,
+    message: 'Wrong sale ID format',
+  },
+};
+
 const salesAlready = {
   err: {
     code: CODE_ERROR_SALES,
@@ -78,4 +85,5 @@ module.exports = {
   productAlready,
   qtdSalesLessOrEqualZero,
   salesAlready,
+  saleNotExist,
 };
