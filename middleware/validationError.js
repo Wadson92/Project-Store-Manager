@@ -38,6 +38,18 @@ const qtdLessOrEqualZero = (quantity) => {
   return true;
 };
 
+const qtdSalesLessOrEqualZero = (quantity) => {
+  if (typeof quantity !== 'number' || quantity <= 0) {
+    return {
+      err: {
+        code: CODE_ERROR,
+        message: 'Wrong product ID or invalid quantity',
+      },
+    };
+  }
+  return true;
+};
+
 const qtdIsNotString = (quantity) => {
   if (typeof quantity !== 'number') {
     return {
@@ -56,4 +68,5 @@ module.exports = {
   qtdLessOrEqualZero,
   qtdIsNotString,
   productAlready,
+  qtdSalesLessOrEqualZero,
 };
