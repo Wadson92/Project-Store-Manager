@@ -1,6 +1,6 @@
 const express = require('express');
 const listProduct = require('./listProduct');
-const listAllProduct = require('./listAllProduct');
+const listAllProduct = require('./listAllProducts');
 const updateProduct = require('./updateProductById');
 const { deleteProduct } = require('./deleteProduct');
 const { product } = require('./create');

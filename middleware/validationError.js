@@ -1,4 +1,5 @@
 const CODE_ERROR = 'invalid_data';
+const CODE_ERROR_SALES = 'not_found';
 
 const validateName = (name) => {
   if (typeof name !== 'string' || name.length < 5) { 
@@ -23,6 +24,13 @@ const productAlready = {
   err: {
     code: CODE_ERROR,
     message: 'Wrong id format',
+  },
+};
+
+const salesAlready = {
+  err: {
+    code: CODE_ERROR_SALES,
+    message: 'Sale not found',
   },
 };
 
@@ -69,4 +77,5 @@ module.exports = {
   qtdIsNotString,
   productAlready,
   qtdSalesLessOrEqualZero,
+  salesAlready,
 };
