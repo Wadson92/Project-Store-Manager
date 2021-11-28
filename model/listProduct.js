@@ -10,7 +10,6 @@ const findProducts = async () => {
 const findProductsById = async (id) => {
   const db = await connection();
     const product = await db.collection('products').findOne(ObjectId(id));
-    console.log(product);
     return product;
 };
 
