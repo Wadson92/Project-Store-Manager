@@ -9,7 +9,7 @@ const validateName = (name) => {
       },
     };
   }
-  return true;
+  return false;
 };
 
 const validateProduct = {

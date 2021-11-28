@@ -1,17 +1,20 @@
-const Product = require('../model/listProduct');
+const { updateProduct } = require('../model/updateProduct');
 const validated = require('../middleware/validationError');
 
-module.exports = async ({ name, quantity }) => {
+module.exports = async ({ id, name, quantity }) => {
   const { validateName, qtdLessOrEqualZero, qtdIsNotString } = validated;
-  if (validateName) {
-    throw validateName();
+  const nameCheck = validateName(name);
+  if (nameCheck.err) {
+    throw nameCheck;
   }
-  if (qtdLessOrEqualZero) {
-    throw qtdLessOrEqualZero();
+  const qtdCheck = qtdLessOrEqualZero(quantity);
+  if (qtdCheck.err) {
+    throw qtdCheck;
   }
-  if (qtdIsNotString) {
-    throw qtdIsNotString();
+  const quantityNotString = qtdIsNotString(quantity);
+  if (quantityNotString.err) {
+    throw quantityNotString;
   }
-  const foundProdId = await Product.findProductsById({ name, quantity });
+  const foundProdId = await updateProduct({ id, name, quantity });
   return foundProdId;
 };

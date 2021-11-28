@@ -8,6 +8,5 @@ module.exports = async ({ id }) => {
     throw productAlready;
   }
   const foundProdId = await Product.findProductsById(id);
-  console.log('chegou');
   return foundProdId;
 };
