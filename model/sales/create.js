@@ -10,7 +10,6 @@ const connection = require('../connection');
 const create = async (entity) => {
   const db = await connection();
     const newSale = await db.collection('sales').insertOne({ itensSold: entity });
-    console.log(newSale.ops[0]);
     return newSale.ops[0];
 };
 

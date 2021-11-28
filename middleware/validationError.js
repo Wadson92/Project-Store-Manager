@@ -47,7 +47,7 @@ const qtdLessOrEqualZero = (quantity) => {
 };
 
 const qtdSalesLessOrEqualZero = (quantity) => {
-  if (typeof quantity !== 'number' || quantity <= 0) {
+  if (typeof quantity !== 'number' || quantity < 1) {
     return {
       err: {
         code: CODE_ERROR,
@@ -55,7 +55,7 @@ const qtdSalesLessOrEqualZero = (quantity) => {
       },
     };
   }
-  return true;
+  return false;
 };
 
 const qtdIsNotString = (quantity) => {
