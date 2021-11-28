@@ -19,6 +19,13 @@ const validateProduct = {
   },
 };
 
+const productAlready = {
+  err: {
+    code: CODE_ERROR,
+    message: 'Wrong id format',
+  },
+};
+
 const qtdLessOrEqualZero = (quantity) => {
   if (quantity <= 0) {
     return {
@@ -48,4 +55,5 @@ module.exports = {
   validateProduct,
   qtdLessOrEqualZero,
   qtdIsNotString,
+  productAlready,
 };
