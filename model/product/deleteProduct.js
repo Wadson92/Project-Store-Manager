@@ -1,5 +1,5 @@
 const { ObjectId } = require('mongodb');
-const connection = require('./connection');
+const connection = require('../connection');
 
 const deleteProduct = async ({ id }) => {
   const db = await connection();   

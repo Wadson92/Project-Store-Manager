@@ -1,4 +1,4 @@
-const { listProduct } = require('../services');
+const { listProduct } = require('../../services/product');
 
 module.exports = async (req, res) => {
   const { id } = req.params;

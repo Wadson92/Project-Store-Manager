@@ -1,4 +1,4 @@
-const { updateProductById } = require('../services');
+const { updateProductById } = require('../../services/product');
 
 const updateProduct = async (req, res) => {
   try {

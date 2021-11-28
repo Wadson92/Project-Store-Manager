@@ -1,6 +1,6 @@
 const { ObjectId } = require('mongodb');
-const { deleteProduct } = require('../model');
-const validated = require('../middleware/validationError');
+const { deleteProduct } = require('../../model/product');
+const validated = require('../../middleware/validationError');
 const listproduct = require('./listProduct');
 
 module.exports = async ({ id }) => {

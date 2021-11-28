@@ -1,5 +1,5 @@
-const Product = require('../model/createProducts');
-const validated = require('../middleware/validationError');
+const Product = require('../../model/product/createProducts');
+const validated = require('../../middleware/validationError');
 
 module.exports = async ({ name, quantity }) => {
   const nameCheck = validated.validateName(name);
